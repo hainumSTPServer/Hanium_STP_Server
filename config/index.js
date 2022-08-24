@@ -20,7 +20,7 @@ export default {
   consumerSecret: process.env.CONSUMER_SECRET,
   accessTokenKey: process.env.ACCESS_TOKEN_KEY,
   accessTokenSecret: process.env.ACCESS_TOKEN_SECRET,
-
+  seoulMetroId: process.env.SEOUL_METRO_ID,
 
   //default api
   api: {

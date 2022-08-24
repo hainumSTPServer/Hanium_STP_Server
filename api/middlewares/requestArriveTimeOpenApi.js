@@ -20,7 +20,7 @@ const requestArriveTimeOpenApi = async (req, res, next) => {
     }
 
     const openApiResult = JSON.parse(body);
-  
+
     if ('realtimeArrivalList' in openApiResult) {
       req.openApiResult = openApiResult;
       req.stationName = stationName;
@@ -28,7 +28,6 @@ const requestArriveTimeOpenApi = async (req, res, next) => {
     } else {
       return res.json(openApiResult);
     }
-   
   });
 };
 

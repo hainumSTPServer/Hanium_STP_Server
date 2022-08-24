@@ -6,7 +6,7 @@ const stationServiceInstance = new StationService();
 
 export default app => {
   app.use('/stations', route);
-  
+
   //도착정보 확인
   route.get(
     '/arrive-info/:stationId',
@@ -14,14 +14,14 @@ export default app => {
     middlewares.getRealTime,
     async (req, res) => {
       const station = {
-        arriveInfo: req.realTimeArray
+        arriveInfo: req.realTimeArray,
       };
-      
+
       return res.json(station);
     },
   );
 
   app.use((error, req, res, next) => {
-    return res.json({errorMessage: error.message});
-  })
+    return res.json({ errorMessage: error.message });
+  });
 };
