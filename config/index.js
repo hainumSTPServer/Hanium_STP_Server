@@ -11,9 +11,16 @@ export default {
   //DB
   databaseURL: process.env.SQL_URI,
 
-  //Key
+  //Open API Key
   arriveTimeKey: process.env.ARRIVE_TIME_KEY,
   rideAlightKey: process.env.RIDE_ALIGHT_KEY,
+
+  //Twitter API Key
+  consumerKey: process.env.CONSUMER_KEY,
+  consumerSecret: process.env.CONSUMER_SECRET,
+  accessTokenKey: process.env.ACCESS_TOKEN_KEY,
+  accessTokenSecret: process.env.ACCESS_TOKEN_SECRET,
+  seoulMetroId: process.env.SEOUL_METRO_ID,
 
   //default api
   api: {

@@ -1,4 +1,4 @@
-import library from '../../library/index.js'
+import library from '../../library/index.js';
 
 const getRealTime = async (req, res, next) => {
   const openApiResult = req.openApiResult;
