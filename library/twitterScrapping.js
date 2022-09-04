@@ -10,11 +10,11 @@ const client = new Twitter({
   access_token_secret: config.accessTokenSecret,
 });
 
-let recentTweetId = 1111;
+let previousTweetId = null;
 
-let createNewTwitterClient = {
+let twitterScrapping = {
   client: client,
-  recentTweetId: recentTweetId,
+  recentTweetId: previousTweetId,
 };
 
-export default createNewTwitterClient;
+export default twitterScrapping;

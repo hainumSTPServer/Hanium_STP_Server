@@ -2,14 +2,13 @@ import library from '../../library/index.js';
 import config from '../../config/index.js';
 
 const getMostRecentTweet = async (req, res, next) => {
+  const first = 0;
   try {
-    library.createNewTwitterClient.recentTweetId =
-      library.createNewTwitterClient.recentTweetId + 1;
-    const client = library.createNewTwitterClient.client;
-    const tweets = await client.get(`users/${config.seoulMetroId}/tweets`);
-    req.recentTweet = tweets.data[7];
-    console.log(req.recentTweet.text);
-    console.log(library.createNewTwitterClient.recentTweetId);
+    const client = library.twitterScrapping.client;
+    const tweets = await client.get(`users/${config.seoulMetroId}/tweets`, {
+      max_results: 100,
+    });
+    req.recentTweet = tweets.data[first];
   } catch (err) {
     console.log(err);
   }

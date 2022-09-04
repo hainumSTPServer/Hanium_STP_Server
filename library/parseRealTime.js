@@ -1,4 +1,3 @@
-import convert from 'xml-js';
 import { LineService } from '../services/line.js';
 const lineServiceInstance = new LineService();
 
@@ -6,9 +5,9 @@ const parseRealTime = async openApiResult => {
   const data = openApiResult;
 
   const realtimeRows = data.realtimeArrivalList;
-  
+
   let realTimeArray = [];
-  
+
   if (Array.isArray(realtimeRows)) {
     // 도착 정보가 1개일때는 배열이 아니라 객체이기 때문에 조건문 처리함
     for (let i in realtimeRows) {
@@ -28,9 +27,7 @@ const parseRealTime = async openApiResult => {
     }
   } else {
     const realTimeObject = {
-      lineName: lineServiceInstance.getLineByLineId(
-        realtimeRows.subwayId,
-      ),
+      lineName: lineServiceInstance.getLineByLineId(realtimeRows.subwayId),
       lineId: realtimeRows.subwayId,
       arriveTime: realtimeRows.barvlDt,
       trainDirection: realtimeRows.updnLine,

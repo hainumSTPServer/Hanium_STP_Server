@@ -21,6 +21,7 @@ export default {
   accessTokenKey: process.env.ACCESS_TOKEN_KEY,
   accessTokenSecret: process.env.ACCESS_TOKEN_SECRET,
   seoulMetroId: process.env.SEOUL_METRO_ID,
+  testId: process.env.TEST_ID,
 
   //default api
   api: {
