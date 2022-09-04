@@ -1,8 +1,6 @@
 import { Router } from 'express';
-import { StationService } from '../../services/station.js';
 import middlewares from '../middlewares/index.js';
 const route = Router();
-const stationServiceInstance = new StationService();
 
 export default app => {
   app.use('/stations', route);
